@@ -34,8 +34,8 @@
 
 /*----------------------------------------------------------------------------*/
 
-#define DEFAULT_SSID            "MARIUS"
-#define DEFAULT_SEC_KEY         "oiefuh123t78jyte"
+#define DEFAULT_SSID            ""
+#define DEFAULT_SEC_KEY         ""
 #define DEFAULT_SEC_TYPE        SL_SEC_TYPE_WPA_WPA2
 
 #define SSID_NAME               ( DEFAULT_SSID )
