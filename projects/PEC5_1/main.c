@@ -59,7 +59,7 @@
 #define MAIN_STACK_SIZE         ( 2048 )
 #define BLINK_STACK_SIZE        ( 128 )
 
-#define SERVER_ADDRESS          ( SL_IPV4_VAL(63,32,102,123) )
+#define SERVER_ADDRESS          ( SL_IPV4_VAL(34,242,138,185) )
 #define TCP_PORT_NUMBER         ( 5001 )
 #define UDP_PORT_NUMBER         ( 12345 )
 
@@ -191,10 +191,6 @@ static void TransmitterTask(void *pvParameters) {
             acceleration_z = new_measurements.acceleration_z;
 
             /* Write the UDP buffer */
-            length = snprintf((char*)tx_buffer, sizeof(tx_buffer), \
-                     "{\"id\": \"%d\", \"temperature\": \"%.3f\", \"light\": \"%.3f\", \"accel_x\": \"%d\", \"accel_y\": \"%d\", \"accel_z\": \"%d\"}",
-                     NODE_ID, ambient_temp, ambient_light, acceleration_x, acceleration_y, acceleration_z);
-
             length = snprintf((char*)tx_buffer, sizeof(tx_buffer), "%.3f", ambient_temp);
             /* Send audio data through UDP socket */
             retVal = wifi_udp_client_send(udp_socket, &socket_addr, tx_buffer, length);
